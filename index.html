@@ -137,6 +137,25 @@ What am I?</p>
 <script src="js/bootstrap.min.js"></script>	
 <script src="js/jquery.backstretch.min.js"></script>
 <script src="js/custom.js"></script>
-<script src="js/Try1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+<script>
+	var password5 = "a17287f8e1ccbe3c748abe0edf005991";
+	var password2 = document.getElementById("password").value;
+	var hash = CryptoJS.MD5(password2);
+	$("#re").click(function(){
+	    if(password5.value != hash.value) {
+	    document.querySelector("#result").innerHTML="Incorrect Password";
+	    $("#result").fadeIn();
+	    $("#result").fadeIn("slow");            
+	    } else {
+	    //document.querySelector("#result").style.display="block";
+	    document.querySelector("#result").innerHTML="Correct Password";
+	    location.href="congratulations.html"                
+	    $("#result").fadeIn();
+	    $("#result").fadeIn("slow");
+	    }
+	});
+</script>
 </body>
 </html>
